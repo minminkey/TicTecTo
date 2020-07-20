@@ -48,7 +48,12 @@ var 비동기콜백 = function(이벤트){
                 });
             });
         }else if(check){
-            alert("무승부입니다.")
+            alert("무승부입니다.");
+            칸들.forEach(function(줄){
+                줄.forEach(function(칸){
+                    칸.textContent="";
+                });
+            });
         }
         else {
             if (턴 === 'O') {
