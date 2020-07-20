@@ -32,7 +32,13 @@ var 비동기콜백 = function(이벤트){
                 다참 = true;
             }
         }
-
+        var check=true;
+        칸들.forEach(function(줄){
+            줄.forEach(function(칸){
+                if(칸.textContent==="")
+                    check=false;
+            });
+        });
         if (다참) {
             alert(턴 + '님이 승리');
             턴 = 'X';
@@ -41,7 +47,10 @@ var 비동기콜백 = function(이벤트){
                     칸.textContent="";
                 });
             });
-        } else {
+        }else if(check){
+            alert("무승부입니다.")
+        }
+        else {
             if (턴 === 'O') {
                 턴 = 'X';
             } else {
